@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Egitor</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ 
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/froala_editor.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/froala_style.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/code_view.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/draggable.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/colors.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/image.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/table.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/video.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/file.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/quick_insert.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/help.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/special_characters.css">
+    <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/themes/dark.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+
+</head>
+
+<body>
+
+    <div id="wrapper" ng-app="egitorApp" ng-controller="mainCtrl">
+        <ul class="nav navbar-nav side-nav">
+            <li class='app-title-li'>
+                <a><h1>Egitor</h1></a>
+            </li>
+            <li>
+                <a href="blank-page.html"><i class="fa fa-fw fa-search treeElement"></i> Search here</a>
+            </li> 
+            <li>
+                <file-tree-element child='repository'></file-tree-element>
+            </li>            
+            <li class="settings-button">
+                <div class="dropup text-center">
+                    <h1 class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog treeElement"></i></h1>
+                    
+                    <ul class="dropdown-menu text-center">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Repository</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Info</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Preferences</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Close</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div ng-view></div>
+                </div>
+                <!-- /.row --> 
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <!--<script src="js/plugins/morris/morris-data.js"></script>-->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/froala_editor.min.js" ></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/align.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/char_counter.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/code_beautifier.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/colors.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/draggable.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/entities.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/file.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/font_size.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/font_family.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/fullscreen.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/image.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/image_manager.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/line_breaker.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/inline_style.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/lists.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/paragraph_format.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/paragraph_style.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/quick_insert.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/quote.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/save.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/video.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/help.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/print.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/special_characters.min.js"></script>
+    <script type="text/javascript" src="froala/froala_editor_2.5.1/js/plugins/word_paste.min.js"></script>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <script src="app/controllers/main.js"></script>    
+    <script src="app/controllers/file.js"></script>
+    <script src="app/directives/fileTreeElement/fileTreeElement.js"></script>
+    <script src="app/services/repositoryService.js"></script>
+
+</body>
+
+</html>
