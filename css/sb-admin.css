@@ -342,14 +342,17 @@ a.tree-element>i{
     color:#ef6960!important;
 }
 .settings-button{
-    bottom: 15px;
-    position: absolute!important;
+    /*bottom: 15px;
+    position: absolute!important;*/
+    position:absolute;
+    bottom:15px; 
+    width:100%;
 }
 
 .menu-top{
-    float: none;
+    /*float: none;
     left: 0px;
-    top: -400%;
+    top: -400%;*/
 }
 
 .dropdown-menu {
@@ -364,4 +367,11 @@ a.tree-element>i{
 
 .logo{
     height:39px;
+}
+
+.repository-tree-li{
+    /*min-height: 420px;
+    max-height: 420px;*/
+    overflow-x: auto;
+    overflow-y: auto;
 }
