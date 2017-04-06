@@ -36,10 +36,7 @@ function createWindow () {
     win = null
     log.info('closed');
   })
-
-  win.on('egitor_repository_url_change',()=>{ 
-    log.info('Hello, log');
-  })
+ 
 
 }
 

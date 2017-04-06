@@ -122,11 +122,10 @@ app.factory('repositoryService', function() {
             return null;   
 
         },
-        setRepositorySource: function(url){
-            //var event = new CustomEvent('egitor_repository_url_change', { 'url': url }); 
-            $(window).trigger('egitor_repository_url_change');
-            var remote = require('remote'); 
+        setRepositorySource: function(url){ 
             localStorage.setItem("egitor_repository_url",url);
+
+            //http://ourcodeworld.com/articles/read/156/how-to-execute-a-bat-file-receive-data-and-errors-with-electron-framework
         }
 
     }
