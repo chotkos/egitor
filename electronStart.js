@@ -7,12 +7,14 @@ const url = require('url')
 let win
 
 function createWindow () {
+  var log = require('electron-log');
+
   // Create the browser window.
   win = new BrowserWindow({
       width: 800, 
       height: 600,
       webPreferences: {
-        nodeIntegration: false
+        nodeIntegration: true
         }
     })
 
@@ -32,7 +34,13 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null
+    log.info('closed');
   })
+
+  win.on('egitor_repository_url_change',()=>{ 
+    log.info('Hello, log');
+  })
+
 }
 
 // This method will be called when Electron has finished

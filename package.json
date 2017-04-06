@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "main": "electronStart.js",
   "dependencies": {
-    "electron-storage": "^1.0.7"
+    "electron-storage": "^1.0.7",
+    "froala-editor": "^2.5.1",
+    "jquery": "^3.2.1"
   }
 }

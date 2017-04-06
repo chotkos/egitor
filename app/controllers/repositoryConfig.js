@@ -4,7 +4,6 @@ app.controller('repositoryConfigCtrl', function($scope,repositoryService) {
  
     $scope.changeRepository = function(){
         repositoryService.setRepositorySource($scope.url);
-        
     }
  
 });
