@@ -121,6 +121,9 @@ app.factory('repositoryService', function() {
             return findFileRecursive(pathArray,all);
             return null;   
 
+        },
+        setRepositorySource: function(url){
+            localStorage.setItem("egitor_repository_url",url);
         }
 
     }

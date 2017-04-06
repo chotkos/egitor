@@ -361,3 +361,7 @@ a.tree-element>i{
 .dropup>ul>li>a:hover{
     color:#ef6960!important;
 }
+
+.logo{
+    height:39px;
+}

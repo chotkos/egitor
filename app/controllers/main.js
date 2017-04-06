@@ -10,6 +10,10 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'fileCtrl',
         file: 'file'
     }) 
+    .when("/repositoryConfig", {
+        templateUrl: "app/views/repositoryConfig.html",
+        controller: 'repositoryConfigCtrl'
+    }) 
 }]);
 
 

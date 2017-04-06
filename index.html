@@ -59,7 +59,7 @@
     <div id="wrapper" ng-app="egitorApp" ng-controller="mainCtrl">
         <ul class="nav navbar-nav side-nav">
             <li class='app-title-li'>
-                <a><h1>Egitor</h1></a>
+                <a href="index.html"><h1><img class='logo' src='img/logo.png'/>Egitor</h1></a>
             </li>
             <li>
                 <a href="blank-page.html"><i class="fa fa-fw fa-search treeElement"></i> Search here</a>
@@ -73,10 +73,10 @@
                     
                     <ul class="dropdown-menu text-center">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Repository</a>
+                            <a href="#repositoryConfig"><i class="fa fa-fw fa-git-square "></i> Repository</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Info</a>
+                            <a href="#"><i class="fa fa-fw fa-question"></i> Info</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Preferences</a>
@@ -161,6 +161,7 @@
 
     <script src="app/controllers/main.js"></script>    
     <script src="app/controllers/file.js"></script>
+    <script src="app/controllers/repositoryConfig.js"></script>
     <script src="app/directives/fileTreeElement/fileTreeElement.js"></script>
     <script src="app/services/repositoryService.js"></script>
 
