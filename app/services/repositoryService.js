@@ -123,7 +123,7 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
                 alert('Failed to execute batch:' + data);
             };
 
-            return batExecutorService.executeBat("electronTest.bat", success, failure);
+            return batExecutorService.executeBat("electronTest.bat", success, failure, ["'test text'"]);
 
         }
 

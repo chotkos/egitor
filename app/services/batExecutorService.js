@@ -39,7 +39,6 @@ app.factory('batExecutorService', function () {
                 switch (code) {
                     case 0:
                         console.info(preText + "Batch has been closed correctly.")
-                        alert('sukces');
                         break;
                     default:
                         console.info(preText + "Batch has NOT been closed correctly.")
