@@ -27,8 +27,8 @@ app.directive("fileTreeElement", function($compile) {
 
             $scope.guid = guid();         
             $scope.clickedTreeElement = function(el){
-                if(!el.isFolder){ 
-                    $location.path('file').search({path: el.path});       
+                if(el.extension){ 
+                    $location.path('file').search({path: el.path, name:el.name});       
                 }
             }   
         },
