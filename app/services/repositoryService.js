@@ -89,6 +89,14 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
     };
     return {
         get: function () {
+            var success = function (data) {
+                alert('Success:' + data);
+            };
+            var failure = function (data) {
+                alert('Failed to execute batch:' + data);
+            };
+            var tree = batExecutorService.executeBat("getFolderStructure.bat", success, failure,[]);
+
             return repository;
         },
         getFileByPath: function (path) {

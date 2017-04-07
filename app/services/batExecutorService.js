@@ -5,13 +5,13 @@ app.factory('batExecutorService', function () {
         executeBat: function (batchFileName, successHandler, failureHandler, params) {
             "use strict";
             // The path to the .bat file
+
             var paramsString = " ";
-            for(var i=0;i<params.length;i++){
-                paramsString+=params[i]+" ";
+            if(params){
+                for(var i=0;i<params.length;i++){
+                    paramsString+=params[i]+" ";
+                } 
             }
-
-
-
             var myBatFilePath = "%cd%\\bat\\" + batchFileName + paramsString;
 
             const spawn = require('child_process').spawn;
