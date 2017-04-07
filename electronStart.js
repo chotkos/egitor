@@ -36,7 +36,8 @@ function createWindow () {
     win = null
     log.info('closed');
   })
- 
+  
+  win.setMenu(null);
 
 }
 

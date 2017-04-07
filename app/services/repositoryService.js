@@ -1,4 +1,4 @@
-app.factory('repositoryService', function () {
+app.factory('repositoryService', ['batExecutorService', function (batExecutorService) {
     var repository = {
         isRoot: true,
         isFolder: true,
@@ -88,9 +88,6 @@ app.factory('repositoryService', function () {
         ]
     };
     return {
-        bats: {
-            loadNewRepository: function (url, success) {},   
-        },
         get: function () {
             return repository;
         },
@@ -118,12 +115,18 @@ app.factory('repositoryService', function () {
         },
         setRepositorySource: function (url) {
             localStorage.setItem("egitor_repository_url", url);
-            this.bats.loadNewRepository(url, function(data){
-                console.log(data);
-            });
-            //http://ourcodeworld.com/articles/read/156/how-to-execute-a-bat-file-receive-data-and-errors-with-electron-framework
+
+            var success = function (data) {
+                alert('Success:' + data);
+            };
+            var failure = function (data) {
+                alert('Failed to execute batch:' + data);
+            };
+
+            return batExecutorService.executeBat("electronTest.bat", success, failure);
+
         }
 
     }
 
-});
+}]);
