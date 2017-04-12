@@ -1,14 +1,16 @@
 app.controller('fileCtrl', function ($scope, $routeParams, repositoryService) {
 
-        $scope.file = { 
-            path: $routeParams.path,
-            name: $routeParams.name
-        };
+    $scope.file = {
+        path: $routeParams.path,
+        name: $routeParams.name
+    };
 
     var successHandler = function (data) {
         $scope.file.content = data;
 
-        $('#editor').html($scope.file.content).froalaEditor();
+        $('#editor').html($scope.file.content).froalaEditor({
+            toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'outdent', 'indent', 'clearFormatting', 'insertTable', 'html']
+        });
     };
 
     var promise = repositoryService.getFileByPath($routeParams.path);

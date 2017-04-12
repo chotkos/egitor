@@ -21,17 +21,22 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
             });  
 
         },
-        setRepositorySource: function (url) {
-            localStorage.setItem("egitor_repository_url", url);
+        setRepositorySource: function (newRepository) {
+            localStorage.setItem("egitor_repository_url", newRepository.url);
+            localStorage.setItem("egitor_repository_login", newRepository.login);
+            localStorage.setItem("egitor_repository_password", newRepository.password);
 
             var success = function (data) {
-                alert('Success:' + data);
+                console.log('Success:' + data);
             };
             var failure = function (data) {
-                alert('Failed to execute batch:' + data);
+                console.log('Failed to execute batch:' + data);
             };
 
-            return batExecutorService.executeBat("electronTest.bat", success, failure, ["'test text'"]);
+            batExecutorService.executeBat("clearRepo.bat", success, failure, []);
+            setTimeout(function(){
+                batExecutorService.executeBat("getNewRepo.bat", success, failure, [newRepository.url+' '+newRepository.login +' '+ newRepository.password]);
+            },5000)
 
         }
 

@@ -3,12 +3,26 @@
     Configure your repository
   </h1>
   <div class='col-md-12'>
-    <form>
-      <div class="form-group">
+    <div class='row'>
+      <div class='col-md-12'>
         <label for="repository">Git repository address (including .git):</label>
         <input type="string" class="form-control" id="repository" ng-model="url">
       </div>
-      <button ng-click="changeRepository()" class="btn btn-default">Save</button>
-    </form>
+    </div>
+    <div class='row'>
+      <div class='col-md-6'>
+        <label for="login">Login</label>
+        <input type="string" class="form-control" id="login" ng-model="login">
+      </div>
+      <div class='col-md-6'>
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" ng-model="password"></div>
+    </div>
+    <br/>
+    <div class='row'>
+      <div class="col-md-12 text-center">
+        <button ng-click="changeRepository()" class="btn btn-default">Save</button>
+      </div>
+    </div>
   </div>
 </div>
