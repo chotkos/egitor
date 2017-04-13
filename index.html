@@ -22,7 +22,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
- 
+
     <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/froala_editor.css">
     <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/froala_style.css">
     <link rel="stylesheet" href="froala/froala_editor_2.5.1/css/plugins/code_view.css">
@@ -50,7 +50,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
+
 
 </head>
 
@@ -59,18 +59,20 @@
     <div id="wrapper" ng-app="egitorApp" ng-controller="mainCtrl">
         <ul class="nav navbar-nav side-nav">
             <li class='app-title-li'>
-                <a href="index.html"><h1><img class='logo' src='img/logo.png'/>Egitor</h1></a>
+                <a href="index.html">
+                    <h1><img class='logo' src='img/logo.png' />Egitor</h1>
+                </a>
             </li>
             <li>
                 <a href="blank-page.html"><i class="fa fa-fw fa-search treeElement"></i> Search here</a>
-            </li> 
+            </li>
             <li class="repository-tree-li">
                 <file-tree-element child='repository'></file-tree-element>
-            </li>            
+            </li>
             <div class="settings-button text-center">
                 <div class="dropup text-center">
                     <h1 class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog treeElement"></i></h1>
-                    
+
                     <ul class="dropdown-menu text-center">
                         <li>
                             <a href="#repositoryConfig"><i class="fa fa-fw fa-git-square "></i> Repository</a>
@@ -99,7 +101,7 @@
                 <div class="row">
                     <div ng-view></div>
                 </div>
-                <!-- /.row --> 
+                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
@@ -108,6 +110,9 @@
         <!-- /#page-wrapper -->
 
     </div>
+
+    
+
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -115,7 +120,6 @@
     <script>
         window.$ = window.jQuery = require('jquery');
         require('froala-editor')($);
-
     </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -128,10 +132,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-    <script src="app/controllers/main.js"></script>    
+    <script src="app/controllers/main.js"></script>
     <script src="app/controllers/file.js"></script>
     <script src="app/controllers/repositoryConfig.js"></script>
     <script src="app/directives/fileTreeElement/fileTreeElement.js"></script>

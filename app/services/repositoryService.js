@@ -28,6 +28,7 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
 
             var success = function (data) {
                 $(document).trigger('reloadRepository');
+                $('#repositoryDoneModal').modal({show:true});
             };
             var failure = function (data) {
                 $(document).trigger('reloadRepository');
@@ -38,6 +39,12 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
                 batExecutorService.executeBat("getNewRepo.bat", success, failure, [newRepository.url+' '+newRepository.login +' '+ newRepository.password]);
             },5000)
 
+        },
+        commitPush:function(file){
+            var login = localStorage.getItem("egitor_repository_login");
+            var password = localStorage.getItem("egitor_repository_password");
+            var commitName = file.name +'___'+ new Date();
+            batExecutorService.executeBat("commitPush.bat",  function(){}, function(){}, [login,password,commitName]);
         }
 
     }
