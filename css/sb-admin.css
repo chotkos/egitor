@@ -375,3 +375,7 @@ a.tree-element>i{
     overflow-x: auto;
     overflow-y: auto;
 }
+
+.active-file{
+    background-color:black;
+}
