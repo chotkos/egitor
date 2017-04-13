@@ -19,4 +19,10 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.controller('mainCtrl', function($scope,repositoryService) {
     $scope.repository = repositoryService.get(); 
+
+    $(document).on( "reloadRepository", function(){
+        $scope.repository = repositoryService.get(); 
+        $scope.$apply();
+    } );
+
 });

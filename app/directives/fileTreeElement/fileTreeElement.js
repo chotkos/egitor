@@ -35,6 +35,7 @@ app.directive("fileTreeElement", function($compile) {
         scope: {
             child: '=' 
         },
+        transclude:true,
         templateUrl : "app/directives/fileTreeElement/fileTreeElement.html"
     };
 });

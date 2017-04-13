@@ -1,3 +1,3 @@
 cd Repository
-rmdir /s /q git
-mkdir git 
+rmdir /s /q Repository
+mkdir Repository 

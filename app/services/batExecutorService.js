@@ -28,7 +28,7 @@ app.factory('batExecutorService', function () {
             // Handle error output
             bat.stderr.on('data', (data) => {
                 var str = String.fromCharCode.apply(null, data);
-                console.error(str);
+                console.log(str);
                 failureHandler(data);
             });
 

@@ -10,7 +10,7 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
             };
 
             const dirTree = require('directory-tree');
-            const tree = dirTree('./Repository');  
+            const tree = dirTree('./Repository/Repository');  
             tree.isRoot=true;
             return tree;
         },
@@ -27,13 +27,13 @@ app.factory('repositoryService', ['batExecutorService', function (batExecutorSer
             localStorage.setItem("egitor_repository_password", newRepository.password);
 
             var success = function (data) {
-                console.log('Success:' + data);
+                $(document).trigger('reloadRepository');
             };
             var failure = function (data) {
-                console.log('Failed to execute batch:' + data);
+                $(document).trigger('reloadRepository');
             };
 
-            batExecutorService.executeBat("clearRepo.bat", success, failure, []);
+            batExecutorService.executeBat("clearRepo.bat",  function(){}, function(){}, []);
             setTimeout(function(){
                 batExecutorService.executeBat("getNewRepo.bat", success, failure, [newRepository.url+' '+newRepository.login +' '+ newRepository.password]);
             },5000)

@@ -1,14 +1,15 @@
-<a href="javascript:;" data-toggle="collapse" data-target="{{'#drop_'+guid+child.name}}" class='tree-element'  ng-click="clickedTreeElement(child)" >
-    <i ng-hide='child.extension' class="fa fa-fw fa-folder"></i> 
-    <i ng-show='child.extension' class="fa fa-fw fa-file"></i> 
-    {{child.name}}
-    <i ng-hide='child.extension' class="fa fa-fw fa-caret-down "></i>
-    <i ng-hide='child.extension' class="fa fa-fw fa-edit tree-icon"></i>
-    <i ng-hide='child.extension' class="fa fa-fw fa-plus tree-icon"></i>
-    <i ng-hide='child.isRoot' class="fa fa-fw fa-trash tree-icon"></i>
-</a>
-<ul ng-if='!child.extension' id="{{'drop_'+guid+child.name}}" class="collapse treeElement">
-    <li ng-repeat="c in child.children" class="no-bullet">
-        <file-tree-element child='c'></file-tree-element>
-    </li> 
-</ul>
+<div ng-hide="child.name.startsWith('.')">
+    <a href="javascript:;" data-toggle="collapse" data-target="{{'#drop_'+guid+child.name}}" class='tree-element' ng-click="clickedTreeElement(child)">
+        <i ng-hide='child.extension' class="fa fa-fw fa-folder"></i>
+        <i ng-show='child.extension' class="fa fa-fw fa-file"></i> {{child.name}}
+        <i ng-hide='child.extension' class="fa fa-fw fa-caret-down "></i>
+        <i ng-hide='child.extension' class="fa fa-fw fa-edit tree-icon"></i>
+        <i ng-hide='child.extension' class="fa fa-fw fa-plus tree-icon"></i>
+        <i ng-hide='child.isRoot' class="fa fa-fw fa-trash tree-icon"></i>
+    </a>
+    <ul ng-if='!child.extension' id="{{'drop_'+guid+child.name}}" class="collapse treeElement">
+        <li ng-repeat="c in child.children" class="no-bullet">
+            <file-tree-element child='c'></file-tree-element>
+        </li>
+    </ul>
+</div>
